@@ -9,10 +9,13 @@ use PHPUnit\Framework\TestCase;
 use BoxDesigner\Rectangle;
 use BoxDesigner\SideLessThanOneException;
 
+/**
+ * @covers
+ */
 class RectangleLessThanOneParamsExceptionTest extends TestCase
 {
 
-    public function lessThanOneValuesProvider()
+    public static function lessThanOneValuesProvider()
     {
         return [
             [-4, 8],

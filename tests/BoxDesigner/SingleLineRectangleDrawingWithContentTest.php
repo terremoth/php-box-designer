@@ -8,10 +8,13 @@ use PHPUnit\Framework\TestCase;
 
 use BoxDesigner\Rectangle;
 
+/**
+ * @covers
+ */
 class SingleLineRectangleDrawingWithContentTest extends TestCase
 {
 
-    public function boxValuesProvider()
+    public static function boxValuesProvider()
     {
         return [
             [
