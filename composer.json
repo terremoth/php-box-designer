@@ -12,11 +12,11 @@
     "license": "GPL-3.0-or-later",
     "autoload": {
         "psr-4": {
-            "BoxDrawer\\": "src/BoxDrawer"
+            "BoxDesigner\\": "src/BoxDesigner"
         }
     },
     "autoload-dev": {
-        "BoxDrawer\\Test\\": "tests/BoxDrawer"
+        "BoxDesigner\\Tests\\": "tests/BoxDesigner"
     },
     "authors": [
         {
