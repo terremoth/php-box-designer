@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace BoxDesigner\Tests;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 use BoxDesigner\Rectangle;
-/**
- * @covers
- */
-class SingleLineRectanglesDrawingTest extends TestCase
+use PHPUnit\Framework\Attributes\CoversClass;
+
+#[CoversClass(Rectangle::class)]
+final class SingleLineRectanglesDrawingTest extends TestCase
 {
 
     public static function boxValuesProvider()
@@ -70,9 +71,7 @@ class SingleLineRectanglesDrawingTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider boxValuesProvider
-     */
+    #[DataProvider('boxValuesProvider')]
     public function testSidesLessThanOne($box, $rows, $columns)
     {
         $rectangle = new Rectangle($rows, $columns);

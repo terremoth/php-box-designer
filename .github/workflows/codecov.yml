@@ -1,14 +1,19 @@
-name: CI
+name: Workflow for Codecov
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
  build-test:
-   runs-on: ubuntu-22.04
+   runs-on: ubuntu-latest
 
    steps:
      - name: Checkout Code
-       uses: actions/checkout@v3
+       uses: actions/checkout@v4
+    
+     - name: Set up php 8.1
+       uses: shivammathur/setup-php@v2
+       with:
+         php-version: '8.1'
 
      - name: Install composer and dependencies
        uses: php-actions/composer@v6
@@ -24,8 +29,9 @@ jobs:
          args: tests --coverage-clover ./coverage.xml
 
      - name: Upload to Codecov
-       uses: codecov/codecov-action@v2
+       uses: codecov/codecov-action@v4.0.1
        with:
          token: ${{ secrets.CODECOV_TOKEN }}
+         slug: terremoth/php-ascii-box-designer
          files: ./coverage.xml
          verbose: true
