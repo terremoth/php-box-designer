@@ -3,6 +3,12 @@ Simple app that draws rectangles boxes using ASCII chars with or without text.
 
 See [demos/drawing.php](demos/drawing.php) for examples.
 
+### Installation
+
+- clone this repo
+- ```$ composer install```
+- ```$ composer test```
+
 ---
 ### What it looks like?
 ```sh
