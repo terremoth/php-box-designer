@@ -1,0 +1,40 @@
+{
+    "name": "terremoth/php-ascii-box-drawer",
+    "description": "Simple app that draws rectangles using ASCII chars",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.29"
+    },
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "RectanglesDrawerTdd\\": "src/",
+            "RectanglesDrawerTdd\\Test\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "terremoth",
+            "email": "dutr4@outlook.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "scripts": {
+        "fix": "phpcbf",
+        "lint": "phpcs",
+        "analyze": "psalm --shepherd --no-cache",
+        "test": "phpunit",
+        "ci": [
+            "@composer lint",
+            "@composer analyze",
+            "@composer test"
+        ],
+        "build": [
+            "@composer fix",
+            "@composer lint",
+            "@composer analyze",
+            "@composer test"
+        ]
+    }
+}
