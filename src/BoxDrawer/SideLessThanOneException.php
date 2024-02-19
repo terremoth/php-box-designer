@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RectanglesDrawerTdd;
+namespace BoxDrawer;
 
 use Exception;
 

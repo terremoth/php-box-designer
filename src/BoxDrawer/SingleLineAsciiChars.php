@@ -2,36 +2,37 @@
 
 declare(strict_types=1);
 
-class DoubleLineAsciiChars implements LineAsciiCharsInterface
+namespace BoxDrawer;
+
+class SingleLineAsciiChars implements LineAsciiCharsInterface
 {
     public function topLeft() : string
     {
-        return '╔';
+        return '┌';
     }
 
     public function topRight() : string
     {
-        return '╗';
+        return '┐';
     }
 
     public function bottomLeft() : string
     {
-        return '╚';
+        return '└';
     }
 
     public function bottomRight() : string
     {
-        return '╝';
+        return '┘';
     }
 
     public function horizontalLine() : string
     {
-        return '═';
+        return '─';
     }
 
     public function verticalLine() : string
     {
-        return '║';
+        return '│';
     }
-
 }

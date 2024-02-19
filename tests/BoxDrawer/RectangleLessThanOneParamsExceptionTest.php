@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace RectanglesDrawerTdd\Test;
+namespace BoxDrawer\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-use RectanglesDrawerTdd\Rectangle;
-use RectanglesDrawerTdd\SideLessThanOneException;
+use BoxDrawer\Rectangle;
+use BoxDrawer\SideLessThanOneException;
 
 class RectangleLessThanOneParamsExceptionTest extends TestCase
 {

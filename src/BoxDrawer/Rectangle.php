@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RectanglesDrawerTdd;
+namespace BoxDrawer;
 
 class Rectangle
 {
@@ -10,7 +10,9 @@ class Rectangle
 
     public function __construct(private int $rows = 1, private int $columns = 1)
     {
-        if ($rows < 1 || $columns < 1) throw new SideLessThanOneException("The rectangle rows and columns must greater than zero");
+        if ($rows < 1 || $columns < 1) {
+            throw new SideLessThanOneException("The rectangle rows and columns must greater than zero");
+        }
     }
 
     public function setContentInsideBox(string $string)

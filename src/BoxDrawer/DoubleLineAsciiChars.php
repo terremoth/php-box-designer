@@ -2,37 +2,38 @@
 
 declare(strict_types=1);
 
-namespace RectanglesDrawerTdd;
+namespace BoxDrawer;
 
-class SingleLineAsciiChars implements LineAsciiCharsInterface
+class DoubleLineAsciiChars implements LineAsciiCharsInterface
 {
     public function topLeft() : string
     {
-        return '┌';
+        return '╔';
     }
 
     public function topRight() : string
     {
-        return '┐';
+        return '╗';
     }
 
     public function bottomLeft() : string
     {
-        return '└';
+        return '╚';
     }
 
     public function bottomRight() : string
     {
-        return '┘';
+        return '╝';
     }
 
     public function horizontalLine() : string
     {
-        return '─';
+        return '═';
     }
 
     public function verticalLine() : string
     {
-        return '│';
+        return '║';
     }
+
 }
