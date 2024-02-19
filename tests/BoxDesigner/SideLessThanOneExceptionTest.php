@@ -10,9 +10,11 @@ use BoxDesigner\Rectangle;
 use BoxDesigner\SideLessThanOneException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\UsesClass;
 
-#[CoversClass(SideLessThanOneException::class)]
-final class RectangleLessThanOneParamsExceptionTest extends TestCase
+#[UsesClass(SideLessThanOneException::class)]
+#[CoversClass(Rectangle::class)]
+final class SideLessThanOneExceptionTest extends TestCase
 {
 
     public static function lessThanOneValuesProvider()

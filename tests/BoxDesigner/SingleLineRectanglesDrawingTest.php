@@ -4,13 +4,15 @@ declare(strict_types=1);
 
 namespace BoxDesigner\Tests;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversFunction;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 
 use BoxDesigner\Rectangle;
-use PHPUnit\Framework\Attributes\CoversClass;
 
 #[CoversClass(Rectangle::class)]
+#[CoversFunction(Rectangle::class)]
 final class SingleLineRectanglesDrawingTest extends TestCase
 {
 
