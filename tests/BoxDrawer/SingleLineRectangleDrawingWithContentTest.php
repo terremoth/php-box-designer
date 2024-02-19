@@ -46,21 +46,21 @@ class SingleLineRectangleDrawingWithContentTest extends TestCase
                 "│      │".PHP_EOL.
                 "│      │".PHP_EOL.
                 "└──────┘",
-                2,6,''
+                2,6,' '
             ],
             [
                 "┌───────────────┐".PHP_EOL.
                 "│by terremoth an│".PHP_EOL.
                 "│d friends      │".PHP_EOL.
                 "└───────────────┘",
-                3,15,'by terremoth and friends'
+                2,15,'by terremoth and friends'
             ],
             [
                 "┌───┐".PHP_EOL.
                 "│Lor│".PHP_EOL.
                 "│em │".PHP_EOL.
                 "│ips│".PHP_EOL.
-                "│um │".PHP_EOL.
+                "│um │".PHP_EOL. 
                 "└───┘",
                 4,3,'Lorem ipsum dolor sit amet'
             ]
@@ -71,10 +71,12 @@ class SingleLineRectangleDrawingWithContentTest extends TestCase
     /**
      * @dataProvider boxValuesProvider
      */
-    public function testSidesLessThanOne($box, $row, $column)
+    public function testSidesLessThanOne($box, $rows, $columns, $content)
     {
-        $rectangle = new Rectangle($row, $column);
-        $this->assertEquals($box, $rectangle->draw());
+        $rectangle = new Rectangle($rows, $columns);
+        $rectangle->setContentInsideBox($content);
+        $draw = $rectangle->draw();
+        $this->assertEquals($box, $draw);
     }
     
 }

@@ -11,16 +11,16 @@ class Rectangle
     public function __construct(private int $rows = 1, private int $columns = 1)
     {
         if ($rows < 1 || $columns < 1) {
-            throw new SideLessThanOneException("The rectangle rows and columns must greater than zero");
+            throw new SideLessThanOneException();
         }
     }
 
-    public function setContentInsideBox(string $string)
+    public function setContentInsideBox(string $string) : void
     {
-
+        $this->content = $string;
     }
 
-    protected function drawHorizontalLines(LineAsciiCharsInterface $lineDrawerProvider)
+    protected function drawHorizontalLines(LineAsciiCharsInterface $lineDrawerProvider) : string
     {
         $horizontalLines = '';
 
@@ -51,20 +51,33 @@ class Rectangle
 
     public function draw(LineAsciiCharsInterface|null $lineDrawerProvider = null) : string
     {
-        if (is_null($lineDrawerProvider)) $lineDrawerProvider = new SingleLineAsciiChars;
+        if (is_null($lineDrawerProvider)) {
+            $lineDrawerProvider = new SingleLineAsciiChars;
+        }
 
         $rectangleBox = $this->drawTop($lineDrawerProvider).PHP_EOL;
         
         $sumTheBorders = 2;
         $columns = $this->columns + $sumTheBorders;
 
+        $contentCharPosition = 0;
+        $contentLenght = strlen($this->content);
+
         for ($row = 0; $row < $this->rows; $row++) {
+
             for ($column = 0; $column < $columns; $column++) {
                 
                 if ($column == 0 || $column == ($columns-1)) {
                     $rectangleBox .= $lineDrawerProvider->verticalLine();
                 } else {
-                    $rectangleBox .= ' ';
+
+                    if ($this->content != ' ' && $contentCharPosition < $contentLenght) {
+                        $rectangleBox .= $this->content[$contentCharPosition];
+                        $contentCharPosition++;
+                    } else {
+                        $rectangleBox .= ' ';
+                    }
+
                 }
                 
             }

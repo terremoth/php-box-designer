@@ -53,7 +53,7 @@ class SingleLineRectanglesDrawingTest extends TestCase
                 "│               │".PHP_EOL.
                 "│               │".PHP_EOL.
                 "└───────────────┘",
-                3,15
+                2,15
             ],
             [
                 "┌───┐".PHP_EOL.
@@ -71,9 +71,9 @@ class SingleLineRectanglesDrawingTest extends TestCase
     /**
      * @dataProvider boxValuesProvider
      */
-    public function testSidesLessThanOne($box, $row, $column)
+    public function testSidesLessThanOne($box, $rows, $columns)
     {
-        $rectangle = new Rectangle($row, $column);
+        $rectangle = new Rectangle($rows, $columns);
         $this->assertEquals($box, $rectangle->draw());
     }
     

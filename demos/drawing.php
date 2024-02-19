@@ -28,3 +28,10 @@ echo $rectangle->draw().PHP_EOL;
 $rectangle = new Rectangle(4,3);
 echo $rectangle->draw().PHP_EOL;
 
+$rectangle = new Rectangle(8,3);
+$rectangle->setContentInsideBox('John Doe Lorem Ipsum Dolor Sit Amet');
+echo $rectangle->draw().PHP_EOL;
+
+$rectangle = new Rectangle(2,15);
+$rectangle->setContentInsideBox('by terremoth and friends');
+echo $rectangle->draw().PHP_EOL;
