@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace BoxDrawer\Tests;
+namespace BoxDesigner\Tests;
 
 use PHPUnit\Framework\TestCase;
 
-use BoxDrawer\Rectangle;
+use BoxDesigner\Rectangle;
 
 class SingleLineRectangleDrawingWithContentTest extends TestCase
 {
