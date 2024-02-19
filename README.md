@@ -1,2 +1,5 @@
-# php-ascii-box-drawer
-Simple app that draws rectangles using ASCII chars
+# PHP ASCII Box Drawer
+Simple app that draws rectangles boxes using ASCII chars with or without text.  
+
+See [demos/drawing.php](demos/drawing.php) for examples.
+

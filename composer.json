@@ -16,7 +16,7 @@
         }
     },
     "autoload-dev": {
-        "BoxDrawer\\Test\\": "BoxDrawer/tests"
+        "BoxDrawer\\Test\\": "tests/BoxDrawer"
     },
     "authors": [
         {
