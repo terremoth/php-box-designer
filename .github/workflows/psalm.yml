@@ -3,15 +3,8 @@ name: Psalm Static analysis
 on: [push, pull_request]
 
 jobs:
-  psalm:
-    name: Psalm
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Psalm
-        uses: docker://ghcr.io/psalm/psalm-github-actions
-        with:
-          security_analysis: true
-          args: --shepherd --threads=2 --no-cache
+  - name: Psalm – Static Analysis for PHP
+    uses: psalm/psalm-github-actions@2.3.0
+    with:
+        security_analysis: true
+        args: --shepherd --threads=2 --no-cache
