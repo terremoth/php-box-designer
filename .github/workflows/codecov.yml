@@ -10,11 +10,23 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-      - name: Install dependencies
-        run: composer install && composer dump-autoload
-      - name: Run tests and collect coverage
-        run: vendor/bin/phpunit --coverage-clover coverage.xml .
+      - uses: php-actions/composer@v6 # or alternative dependency management
+      
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v3
+        env:
+          XDEBUG_MODE: coverage
+        with:
+          bootstrap: vendor/autoload.php
+          configuration: phpunit.xml
+          php_extensions: xdebug
+          args: tests --coverage-clover ./coverage.xml
+          # coverage_clover: "./coverage_clover.xml"
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4.0.1
+        with:
+          files: ./coverage.xml
+          verbose: true
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
