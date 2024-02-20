@@ -19,7 +19,7 @@ final class SingleLineRectanglesDrawingTest extends TestCase
 {
 
     /**
-     * @return array[[string, int, int]]
+     * @return array[]
      */
     public static function boxValuesProvider() : array
     {

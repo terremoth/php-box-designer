@@ -12,9 +12,6 @@
         <directory name="." />
         <ignoreFiles>
             <directory name="vendor" />
-            <directory name=".vscode" />
-            <directory name=".phpunit.cache" />
-            <directory name=".idea" />
         </ignoreFiles>
     </projectFiles>
 </psalm>
