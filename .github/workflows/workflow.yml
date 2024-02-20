@@ -17,7 +17,7 @@ jobs:
 #          coverage: none
 
       - name: Setup Composer
-      - uses: php-actions/composer@v6
+        uses: php-actions/composer@v6
 
       - name: Cache composer dependencies
         uses: actions/cache@v2
