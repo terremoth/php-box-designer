@@ -25,8 +25,8 @@ jobs:
           path: vendor
           key: composer-${{ hashFiles('composer.lock') }}
 
-      - name: Run composer install
-        run: composer install -n --prefer-dist
+#      - name: Run composer install
+#        run: composer install -n --prefer-dist
 
       - name: Run psalm
         run: ./vendor/bin/psalm --shepherd --threads=2 --no-cache --output-format=github
