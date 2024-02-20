@@ -9,8 +9,11 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 use BoxDesigner\Rectangle;
+use BoxDesigner\SingleLineBorder;
+use PHPUnit\Framework\Attributes\UsesClass;
 
 #[CoversClass(Rectangle::class)]
+#[UsesClass(SingleLineBorder::class)]
 final class SingleLineRectangleDrawingWithContentTest extends TestCase
 {
 
