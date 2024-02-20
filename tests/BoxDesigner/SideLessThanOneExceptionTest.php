@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace BoxDesigner\Tests;
 
 use PHPUnit\Framework\TestCase;
-
 use BoxDesigner\Rectangle;
 use BoxDesigner\SideLessThanOneException;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -20,7 +19,7 @@ final class SideLessThanOneExceptionTest extends TestCase
     /**
      * @return int[][]
      */
-    public static function lessThanOneValuesProvider() : array
+    public static function lessThanOneValuesProvider(): array
     {
         return [
             [-4, 8],
@@ -35,10 +34,9 @@ final class SideLessThanOneExceptionTest extends TestCase
      * @throus SideLessThanOneException
      */
     #[DataProvider('lessThanOneValuesProvider')]
-    public function testSidesLessThanOne(int $row, int $column) : void
+    public function testSidesLessThanOne(int $row, int $column): void
     {
         $this->expectException(SideLessThanOneException::class);
         new Rectangle($row, $column);
     }
-    
 }

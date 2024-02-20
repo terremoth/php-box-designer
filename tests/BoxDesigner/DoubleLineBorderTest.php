@@ -6,13 +6,12 @@ namespace BoxDesigner\Tests;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-
 use BoxDesigner\DoubleLineBorder;
 
 #[CoversClass(DoubleLineBorder::class)]
 final class DoubleLineBorderTest extends TestCase
 {
-    public function testLinesOutput() : void
+    public function testLinesOutput(): void
     {
         $border = new DoubleLineBorder();
         TestCase::assertEquals('╔', $border->topLeft());
@@ -22,5 +21,4 @@ final class DoubleLineBorderTest extends TestCase
         TestCase::assertEquals('═', $border->horizontalLine());
         TestCase::assertEquals('║', $border->verticalLine());
     }
-    
 }

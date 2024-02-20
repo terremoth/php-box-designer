@@ -8,7 +8,8 @@
     "require-dev": {
         "phpunit/phpunit": "^10.0",
         "vimeo/psalm": "^5.0",
-        "nikic/php-parser": "^4.10"
+        "nikic/php-parser": "^4.10",
+        "squizlabs/php_codesniffer": "*"
     },
     "license": "GPL-3.0-or-later",
     "autoload": {

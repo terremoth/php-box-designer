@@ -6,7 +6,6 @@ namespace BoxDesigner;
 
 use Exception;
 
-class SideLessThanOneException extends Exception 
+class SideLessThanOneException extends Exception
 {
-
 }

@@ -18,12 +18,12 @@ class Rectangle
         }
     }
 
-    public function setContentInsideBox(string $string) : void
+    public function setContentInsideBox(string $string): void
     {
         $this->content = $string;
     }
 
-    protected function drawHorizontalLines(LineAsciiCharsInterface $lineDrawerProvider) : string
+    protected function drawHorizontalLines(LineAsciiCharsInterface $lineDrawerProvider): string
     {
         $horizontalLines = '';
 
@@ -34,7 +34,7 @@ class Rectangle
         return $horizontalLines;
     }
 
-    protected function drawTop(LineAsciiCharsInterface $lineDrawerProvider) : string
+    protected function drawTop(LineAsciiCharsInterface $lineDrawerProvider): string
     {
         $rectangleBoxTop = $lineDrawerProvider->topLeft();
         $rectangleBoxTop .= $this->drawHorizontalLines($lineDrawerProvider);
@@ -43,7 +43,7 @@ class Rectangle
         return $rectangleBoxTop;
     }
 
-    protected function drawBottom(LineAsciiCharsInterface $lineDrawerProvider) : string
+    protected function drawBottom(LineAsciiCharsInterface $lineDrawerProvider): string
     {
         $rectangleBoxBottom = $lineDrawerProvider->bottomLeft();
         $rectangleBoxBottom .= $this->drawHorizontalLines($lineDrawerProvider);
@@ -52,14 +52,14 @@ class Rectangle
         return $rectangleBoxBottom;
     }
 
-    public function draw(LineAsciiCharsInterface|null $lineDrawerProvider = null) : string
+    public function draw(LineAsciiCharsInterface|null $lineDrawerProvider = null): string
     {
         if (is_null($lineDrawerProvider)) {
-            $lineDrawerProvider = new SingleLineBorder;
+            $lineDrawerProvider = new SingleLineBorder();
         }
 
-        $rectangleBox = $this->drawTop($lineDrawerProvider).PHP_EOL;
-        
+        $rectangleBox = $this->drawTop($lineDrawerProvider) . PHP_EOL;
+
         $sumTheBorders = 2;
         $columns = $this->columns + $sumTheBorders;
 
@@ -67,31 +67,24 @@ class Rectangle
         $contentLength = strlen($this->content);
 
         for ($row = 0; $row < $this->rows; $row++) {
-
             for ($column = 0; $column < $columns; $column++) {
-                
-                if ($column == 0 || $column == ($columns-1)) {
+                if ($column == 0 || $column == ($columns - 1)) {
                     $rectangleBox .= $lineDrawerProvider->verticalLine();
                 } else {
-
                     if ($this->content != ' ' && $contentCharPosition < $contentLength) {
                         $rectangleBox .= $this->content[$contentCharPosition];
                         $contentCharPosition++;
                     } else {
                         $rectangleBox .= ' ';
                     }
-
                 }
-                
             }
 
             $rectangleBox .= PHP_EOL;
-            
         }
 
         $rectangleBox .= $this->drawBottom($lineDrawerProvider);
 
         return $rectangleBox;
-        
     }
 }

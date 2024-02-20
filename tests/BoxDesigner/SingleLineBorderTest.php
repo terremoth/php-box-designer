@@ -6,13 +6,12 @@ namespace BoxDesigner\Tests;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-
 use BoxDesigner\SingleLineBorder;
 
 #[CoversClass(SingleLineBorder::class)]
 final class SingleLineBorderTest extends TestCase
 {
-    public function testLinesOutput() : void
+    public function testLinesOutput(): void
     {
         $border = new SingleLineBorder();
         TestCase::assertEquals('┌', $border->topLeft());
@@ -22,5 +21,4 @@ final class SingleLineBorderTest extends TestCase
         TestCase::assertEquals('─', $border->horizontalLine());
         TestCase::assertEquals('│', $border->verticalLine());
     }
-    
 }
