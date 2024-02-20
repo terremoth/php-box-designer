@@ -3,7 +3,7 @@ name: Workflow for Codecov
 on: [push, pull_request]
 
 jobs:
- build-test:
+ run:
    runs-on: ubuntu-latest
 
    steps:
@@ -31,7 +31,7 @@ jobs:
        run: composer dump-autoload
 
      - name: Run tests and collect coverage
-       run: vendor/bin/phpunit --coverage-clover coverage.xml .
+       run: vendor/bin/phpunit --coverage-clover coverage.xml tests/
 
      - name: Upload to Codecov
        uses: codecov/codecov-action@v4.0.1
