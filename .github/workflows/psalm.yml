@@ -4,8 +4,10 @@ on: [push, pull_request]
 
 jobs:
   run:
-    - name: Psalm – Static Analysis for PHP
-      uses: psalm/psalm-github-actions@2.3.0
-      with:
-          security_analysis: true
-          args: --shepherd --threads=2 --no-cache
+    runs-on: ubuntu-latest
+    steps:
+      - name: Psalm – Static Analysis for PHP
+        uses: psalm/psalm-github-actions@2.3.0
+        with:
+            security_analysis: true
+            args: --shepherd --threads=2 --no-cache
