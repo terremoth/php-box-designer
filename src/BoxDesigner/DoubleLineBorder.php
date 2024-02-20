@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace BoxDesigner;
 
-class DoubleLineAsciiChars implements LineAsciiCharsInterface
+class DoubleLineBorder implements LineAsciiCharsInterface
 {
     public function topLeft() : string
     {
