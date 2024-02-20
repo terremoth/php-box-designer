@@ -3,11 +3,26 @@ name: Psalm Static analysis
 on: [push, pull_request]
 
 jobs:
-  run:
+  psalm:
+    name: psalm
     runs-on: ubuntu-latest
     steps:
-      - name: Psalm – Static Analysis for PHP
-        uses: psalm/psalm-github-actions@2.3.0
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-            security_analysis: true
-            args: --shepherd --threads=2 --no-cache
+          php-version: '8.2'
+          coverage: none
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: composer-${{ hashFiles('composer.lock') }}
+
+      - name: Run composer install
+        run: composer install -n --prefer-dist
+
+      - name: Run psalm
+        run: ./vendor/bin/psalm --shepherd --threads=2 --no-cache --output-format=github
