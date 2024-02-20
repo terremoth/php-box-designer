@@ -8,7 +8,10 @@ class Rectangle
 {
     protected string $content = ' ';
 
-    public function __construct(private int $rows = 1, private int $columns = 1)
+    /**
+     * @throws SideLessThanOneException
+     */
+    public function __construct(private readonly int $rows = 1, private readonly int $columns = 1)
     {
         if ($rows < 1 || $columns < 1) {
             throw new SideLessThanOneException('The box rows and columns number must be greater than zero');
@@ -61,7 +64,7 @@ class Rectangle
         $columns = $this->columns + $sumTheBorders;
 
         $contentCharPosition = 0;
-        $contentLenght = strlen($this->content);
+        $contentLength = strlen($this->content);
 
         for ($row = 0; $row < $this->rows; $row++) {
 
@@ -71,7 +74,7 @@ class Rectangle
                     $rectangleBox .= $lineDrawerProvider->verticalLine();
                 } else {
 
-                    if ($this->content != ' ' && $contentCharPosition < $contentLenght) {
+                    if ($this->content != ' ' && $contentCharPosition < $contentLength) {
                         $rectangleBox .= $this->content[$contentCharPosition];
                         $contentCharPosition++;
                     } else {

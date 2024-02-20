@@ -1,4 +1,4 @@
-name: Workflow CI
+name: Workflow CodeCov
 on: [push, pull_request]
 jobs:
   run:
@@ -30,16 +30,3 @@ jobs:
           verbose: true
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
-    psalm:
-      name: Psalm
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v2
-
-        - name: Psalm
-          uses: docker://ghcr.io/psalm/psalm-github-actions
-          with:
-            security_analysis: true
-            args: --shepherd --threads=2 --no-cache
