@@ -52,7 +52,7 @@ class Rectangle
     public function draw(LineAsciiCharsInterface|null $lineDrawerProvider = null) : string
     {
         if (is_null($lineDrawerProvider)) {
-            $lineDrawerProvider = new SingleLineAsciiChars;
+            $lineDrawerProvider = new SingleLineBorder;
         }
 
         $rectangleBox = $this->drawTop($lineDrawerProvider).PHP_EOL;
