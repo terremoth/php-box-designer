@@ -17,7 +17,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 final class SingleLineRectanglesDrawingTest extends TestCase
 {
 
-    public static function boxValuesProvider()
+    public static function boxValuesProvider() : array
     {
         return [
             [
@@ -75,7 +75,7 @@ final class SingleLineRectanglesDrawingTest extends TestCase
     }
 
     #[DataProvider('boxValuesProvider')]
-    public function testSidesLessThanOne($box, $rows, $columns)
+    public function testSidesLessThanOne(string $box, int $rows, int $columns) : void
     {
         $rectangle = new Rectangle($rows, $columns);
         $this->assertEquals($box, $rectangle->draw());

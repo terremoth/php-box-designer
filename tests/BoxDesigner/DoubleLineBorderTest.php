@@ -12,7 +12,7 @@ use BoxDesigner\DoubleLineBorder;
 #[CoversClass(DoubleLineBorder::class)]
 final class DoubleLineBorderTest extends TestCase
 {
-    public function testLinesOutput()
+    public function testLinesOutput() : void
     {
         $border = new DoubleLineBorder();
         $this->assertEquals($border->topLeft(), '╔');

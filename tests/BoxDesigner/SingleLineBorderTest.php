@@ -12,7 +12,7 @@ use BoxDesigner\SingleLineBorder;
 #[CoversClass(SingleLineBorder::class)]
 final class SingleLineBorderTest extends TestCase
 {
-    public function testLinesOutput()
+    public function testLinesOutput() : void
     {
         $border = new SingleLineBorder();
         $this->assertEquals($border->topLeft(), '┌');

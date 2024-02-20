@@ -17,7 +17,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 final class SingleLineRectangleDrawingWithContentTest extends TestCase
 {
 
-    public static function boxValuesProvider()
+    public static function boxValuesProvider() : array
     {
         return [
             [
@@ -75,7 +75,7 @@ final class SingleLineRectangleDrawingWithContentTest extends TestCase
     }
 
     #[DataProvider('boxValuesProvider')]
-    public function testSidesLessThanOne($box, $rows, $columns, $content)
+    public function testSidesLessThanOne(string $box, int $rows, int $columns, string $content) : void
     {
         $rectangle = new Rectangle($rows, $columns);
         $rectangle->setContentInsideBox($content);

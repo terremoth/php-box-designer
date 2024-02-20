@@ -11,7 +11,7 @@ class Rectangle
     public function __construct(private int $rows = 1, private int $columns = 1)
     {
         if ($rows < 1 || $columns < 1) {
-            throw new SideLessThanOneException();
+            throw new SideLessThanOneException('The box rows and columns number must be greater than zero');
         }
     }
 
