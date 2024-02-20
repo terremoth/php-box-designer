@@ -17,7 +17,9 @@ use PHPUnit\Framework\Attributes\UsesClass;
 #[CoversClass(Rectangle::class)]
 final class SideLessThanOneExceptionTest extends TestCase
 {
-
+    /**
+     * @return int[][]
+     */
     public static function lessThanOneValuesProvider() : array
     {
         return [
@@ -29,6 +31,9 @@ final class SideLessThanOneExceptionTest extends TestCase
         ];
     }
 
+    /**
+     * @throus SideLessThanOneException
+     */
     #[DataProvider('lessThanOneValuesProvider')]
     public function testSidesLessThanOne(int $row, int $column) : void
     {

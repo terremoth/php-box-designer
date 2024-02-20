@@ -15,12 +15,12 @@ final class DoubleLineBorderTest extends TestCase
     public function testLinesOutput() : void
     {
         $border = new DoubleLineBorder();
-        $this->assertEquals($border->topLeft(), '╔');
-        $this->assertEquals($border->topRight(), '╗');
-        $this->assertEquals($border->bottomLeft(), '╚');
-        $this->assertEquals($border->bottomRight(), '╝');
-        $this->assertEquals($border->horizontalLine(), '═');
-        $this->assertEquals($border->verticalLine(), '║');
+        TestCase::assertEquals('╔', $border->topLeft());
+        TestCase::assertEquals('╗', $border->topRight());
+        TestCase::assertEquals('╚', $border->bottomLeft());
+        TestCase::assertEquals('╝', $border->bottomRight());
+        TestCase::assertEquals('═', $border->horizontalLine());
+        TestCase::assertEquals('║', $border->verticalLine());
     }
     
 }

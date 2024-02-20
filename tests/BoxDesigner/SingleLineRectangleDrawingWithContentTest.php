@@ -17,6 +17,9 @@ use PHPUnit\Framework\Attributes\UsesClass;
 final class SingleLineRectangleDrawingWithContentTest extends TestCase
 {
 
+    /**
+     * @return array[[string, int, int, string]]
+     */
     public static function boxValuesProvider() : array
     {
         return [

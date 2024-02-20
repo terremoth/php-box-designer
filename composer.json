@@ -17,7 +17,9 @@
         }
     },
     "autoload-dev": {
-        "BoxDesigner\\Tests\\": "tests/BoxDesigner"
+        "psr-4": {
+            "BoxDesigner\\Tests\\": "tests/BoxDesigner"
+        }
     },
     "authors": [
         {
@@ -29,7 +31,7 @@
     "scripts": {
         "fix": "phpcbf",
         "lint": "phpcs",
-        "analyze": "psalm --shepherd --no-cache",
+        "analyze": "psalm --shepherd --threads=2 --no-cache",
         "test": "vendor/bin/phpunit tests",
         "ci": [
             "@composer lint",

@@ -30,3 +30,8 @@ jobs:
           verbose: true
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Psalm
+        uses: docker://vimeo/psalm-github-actions
+        with:
+          args: --shepherd --threads=2 --no-cache
