@@ -14,6 +14,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 
 #[UsesClass(Rectangle::class)]
 #[CoversClass(SideLessThanOneException::class)]
+#[CoversClass(Rectangle::class)]
 final class SideLessThanOneExceptionTest extends TestCase
 {
 
