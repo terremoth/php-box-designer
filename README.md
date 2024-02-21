@@ -8,7 +8,8 @@ Simple app that draws rectangles boxes using ASCII chars with or without text.
 [![Test Run Status](https://github.com/terremoth/php-ascii-box-designer/actions/workflows/workflow.yml/badge.svg?branch=main)](https://github.com/terremoth/php-ascii-box-designer/actions/workflows/workflow.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f77e487ba22943b5b199a2567f44d6af)](https://app.codacy.com/gh/terremoth/php-ascii-box-designer/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![License](https://img.shields.io/github/license/terremoth/php-ascii-box-designer.svg?logo=gnu)](https://github.com/terremoth/php-ascii-box-designer/blob/main/LICENSE)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fterremoth%2Fphp-ascii-box-designer.svg?type=shield&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fterremoth%2Fphp-ascii-box-designer?ref=badge_shield&issueType=license)
+
+[//]: # ([![FOSSA Status]&#40;https://app.fossa.com/api/projects/git%2Bgithub.com%2Fterremoth%2Fphp-ascii-box-designer.svg?type=shield&issueType=license&#41;]&#40;https://app.fossa.com/projects/git%2Bgithub.com%2Fterremoth%2Fphp-ascii-box-designer?ref=badge_shield&issueType=license&#41;)
 
 See [demos/drawing.php](demos/drawing.php) for examples.
 
