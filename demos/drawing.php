@@ -45,4 +45,3 @@ try {
 } catch (SideLessThanOneException $e) {
     echo $output_filtered($e->getMessage());
 }//end try
-

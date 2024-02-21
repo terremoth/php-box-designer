@@ -1,4 +1,5 @@
 # PHP ASCII Box Designer
+
 Simple app that draws rectangles boxes using ASCII chars with or without text.  
 
 [![CodeCov](https://codecov.io/gh/terremoth/php-ascii-box-designer/graph/badge.svg?token=V73U67XRB3)](https://app.codecov.io/gh/terremoth/php-ascii-box-designer)
@@ -14,7 +15,7 @@ See [demos/drawing.php](demos/drawing.php) for examples.
 
 ## Installation
 
-- Clone this repo: 
+- Clone this repo:
 - `$ git clone https://github.com/terremoth/php-ascii-box-designer.git`
 - `$ cd php-ascii-box-designer`
 - `$ composer install`
