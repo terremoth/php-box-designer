@@ -18,7 +18,9 @@ See [demos/drawing.php](demos/drawing.php) for examples.
 - `$ git clone https://github.com/terremoth/php-ascii-box-designer.git`
 - `$ cd php-ascii-box-designer`
 - `$ composer install`
+    
 ---
+
 ### What it looks like?
 
 ```sh
@@ -80,4 +82,3 @@ $ php demos/drawing.php
 │d friends      │
 └───────────────┘
 ```
-
