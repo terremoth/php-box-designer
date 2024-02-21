@@ -8,38 +8,40 @@ use BoxDesigner\SideLessThanOneException;
 
 $doubleBorder = new DoubleLineBorder();
 
+$output_filtered = fn(string $input): string => htmlspecialchars($input, ENT_QUOTES, 'UTF-8') . PHP_EOL;
+
 try {
     $rectangle = new Rectangle(1, 1);
-    echo htmlspecialchars($rectangle->draw()) . PHP_EOL;
+    echo $output_filtered($rectangle->draw());
 
     $rectangle = new Rectangle(2, 2);
-    echo htmlspecialchars($rectangle->draw()) . PHP_EOL;
+    echo $output_filtered($rectangle->draw());
 
     $rectangle = new Rectangle(3, 3);
-    echo $rectangle->draw($doubleBorder) . PHP_EOL;
+    echo $output_filtered($rectangle->draw($doubleBorder));
 
     $rectangle = new Rectangle(2, 6);
-    echo htmlspecialchars($rectangle->draw()) . PHP_EOL;
+    echo $output_filtered($rectangle->draw());
 
     $rectangle = new Rectangle(3, 15);
-    echo htmlspecialchars($rectangle->draw()) . PHP_EOL;
+    echo $output_filtered($rectangle->draw());
 
     $rectangle = new Rectangle(1, 10);
-    echo htmlspecialchars($rectangle->draw()) . PHP_EOL;
+    echo $output_filtered($rectangle->draw());
 
     $rectangle = new Rectangle(10, 1);
-    echo htmlspecialchars($rectangle->draw()) . PHP_EOL;
+    echo $output_filtered($rectangle->draw());
 
     $rectangle = new Rectangle(4, 3);
-    echo htmlspecialchars($rectangle->draw()) . PHP_EOL;
+    echo $output_filtered($rectangle->draw());
 
     $rectangle = new Rectangle(8, 3);
     $rectangle->setContentInsideBox('John Doe Lorem Ipsum Dolor Sit Amet');
-    echo htmlspecialchars($rectangle->draw()) . PHP_EOL;
+    echo $output_filtered($rectangle->draw());
 
     $rectangle = new Rectangle(2, 16);
     $rectangle->setContentInsideBox('by terremoth and friends');
-    echo htmlspecialchars($rectangle->draw($doubleBorder)) . PHP_EOL;
+    echo $output_filtered($rectangle->draw($doubleBorder));
 } catch (SideLessThanOneException $e) {
-    echo htmlspecialchars($e->getMessage());
+    echo $output_filtered($e->getMessage());
 }
