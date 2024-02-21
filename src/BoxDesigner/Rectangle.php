@@ -71,12 +71,14 @@ class Rectangle
                 if ($column == 0 || $column == ($columns - 1)) {
                     $rectangleBox .= $lineDrawerProvider->verticalLine();
                 } else {
+                    $add = ' ';
+
                     if ($this->content != ' ' && $contentCharPosition < $contentLength) {
-                        $rectangleBox .= $this->content[$contentCharPosition];
+                        $add = $this->content[$contentCharPosition];
                         $contentCharPosition++;
-                    } else {
-                        $rectangleBox .= ' ';
                     }
+
+                    $rectangleBox .= $add;
                 }
             }
 

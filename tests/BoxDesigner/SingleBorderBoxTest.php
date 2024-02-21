@@ -14,7 +14,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 
 #[CoversClass(Rectangle::class)]
 #[UsesClass(SingleLineBorder::class)]
-final class SingleLineRectanglesDrawingTest extends TestCase
+final class SingleBorderBoxTest extends TestCase
 {
     /**
      * @return array[]
@@ -82,6 +82,6 @@ final class SingleLineRectanglesDrawingTest extends TestCase
     public function testSidesLessThanOne(string $box, int $rows, int $columns): void
     {
         $rectangle = new Rectangle($rows, $columns);
-        $this->assertEquals($box, $rectangle->draw());
+        self::assertEquals($box, $rectangle->draw());
     }
 }

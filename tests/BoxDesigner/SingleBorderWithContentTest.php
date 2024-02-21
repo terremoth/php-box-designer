@@ -13,7 +13,7 @@ use PHPUnit\Framework\Attributes\UsesClass;
 
 #[CoversClass(Rectangle::class)]
 #[UsesClass(SingleLineBorder::class)]
-final class SingleLineRectangleDrawingWithContentTest extends TestCase
+final class SingleBorderWithContentTest extends TestCase
 {
     /**
      * @return array[]
@@ -80,6 +80,6 @@ final class SingleLineRectangleDrawingWithContentTest extends TestCase
         $rectangle = new Rectangle($rows, $columns);
         $rectangle->setContentInsideBox($content);
         $draw = $rectangle->draw();
-        $this->assertEquals($box, $draw);
+        self::assertEquals($box, $draw);
     }
 }

@@ -44,4 +44,5 @@ try {
     echo $output_filtered($rectangle->draw($doubleBorder));
 } catch (SideLessThanOneException $e) {
     echo $output_filtered($e->getMessage());
-}
+}//end try
+
