@@ -30,9 +30,9 @@
     ],
     "minimum-stability": "stable",
     "scripts": {
-        "fix": "phpcbf",
-        "lint": "phpcs",
-        "analyze": "psalm --shepherd --threads=2 --no-cache",
+        "fix": "vendor/bin/phpcbf",
+        "lint": "vendor/bin/phpcs --standard=psr12",
+        "analyze": "vendor/bin/psalm",
         "test": "vendor/bin/phpunit tests",
         "ci": [
             "@composer lint",
