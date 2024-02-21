@@ -9,7 +9,8 @@
         "phpunit/phpunit": "^10.0",
         "vimeo/psalm": "^5.0",
         "nikic/php-parser": "^4.10",
-        "squizlabs/php_codesniffer": "*"
+        "squizlabs/php_codesniffer": "*",
+        "phpmd/phpmd": "@stable"
     },
     "license": "GPL-3.0-or-later",
     "autoload": {
@@ -31,9 +32,10 @@
     "minimum-stability": "stable",
     "scripts": {
         "fix": "vendor/bin/phpcbf",
-        "lint": "vendor/bin/phpcs --standard=psr12",
+        "lint": "vendor/bin/phpcs --standard=phpcs.xml",
         "analyze": "vendor/bin/psalm",
         "test": "vendor/bin/phpunit tests",
+        "mess": "vendor/bin/phpmd",
         "ci": [
             "@composer lint",
             "@composer analyze",
