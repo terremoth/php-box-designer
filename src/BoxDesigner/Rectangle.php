@@ -6,7 +6,7 @@ namespace BoxDesigner;
 
 class Rectangle
 {
-    protected string $content = ' ';
+    protected string $content = '';
 
     /**
      * @throws SideLessThanOneException
@@ -64,22 +64,24 @@ class Rectangle
         $columns = $this->columns + $sumTheBorders;
 
         $contentCharPosition = 0;
+        $this->content = str_replace("\r", '', $this->content);
         $contentLength = strlen($this->content);
 
         for ($row = 0; $row < $this->rows; $row++) {
             for ($column = 0; $column < $columns; $column++) {
                 if ($column == 0 || $column == ($columns - 1)) {
                     $rectangleBox .= $lineDrawerProvider->verticalLine();
-                } else {
-                    $add = ' ';
-
-                    if ($this->content != ' ' && $contentCharPosition < $contentLength) {
-                        $add = $this->content[$contentCharPosition];
-                        $contentCharPosition++;
-                    }
-
-                    $rectangleBox .= $add;
+                    continue;
                 }
+
+                $add = ' ';
+
+                if ($this->content != '' && $contentCharPosition < $contentLength) {
+                    $add = $this->content[$contentCharPosition];
+                    $contentCharPosition++;
+                }
+
+                $rectangleBox .= $add;
             }
 
             $rectangleBox .= PHP_EOL;
