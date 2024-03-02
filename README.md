@@ -3,7 +3,7 @@ Boxes. There are Boxes. Everywhere.
 
 Simple app that draws boxes using chars with or without text content inside.  
 
-[![CodeCov](https://codecov.io/gh/terremoth/php-box-designer/graph/badge.svg?token=V73U67XRB3)](https://app.codecov.io/gh/terremoth/php-box-designer)
+[![CodeCov](https://codecov.io/gh/terremoth/php-ascii-box-designer/graph/badge.svg?token=V73U67XRB3)](https://app.codecov.io/gh/terremoth/php-ascii-box-designer)
 [![Psalm type coverage](https://shepherd.dev/github/terremoth/php-box-designer/coverage.svg)](https://shepherd.dev/github/terremoth/php-box-designer)
 [![Psalm level](https://shepherd.dev/github/terremoth/php-box-designer/level.svg)](https://shepherd.dev/github/terremoth/php-box-designer)
 [![Test Run Status](https://github.com/terremoth/php-box-designer/actions/workflows/workflow.yml/badge.svg?branch=main)](https://github.com/terremoth/php-box-designer/actions/workflows/workflow.yml)
