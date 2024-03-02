@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BoxDesigner\Tests;
 
+use BoxDesigner\PreBuilt\SingleLineBorder;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use BoxDesigner\SingleLineBorder;
 
 #[CoversClass(SingleLineBorder::class)]
 final class SingleLineBorderTest extends TestCase

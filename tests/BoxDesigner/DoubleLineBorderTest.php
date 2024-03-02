@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BoxDesigner\Tests;
 
+use BoxDesigner\PreBuilt\DoubleLineBorder;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use BoxDesigner\DoubleLineBorder;
 
 #[CoversClass(DoubleLineBorder::class)]
 final class DoubleLineBorderTest extends TestCase

@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace BoxDesigner;
+namespace BoxDesigner\PreBuilt;
+
+use BoxDesigner\LineAsciiCharsInterface;
 
 class SingleLineBorder implements LineAsciiCharsInterface
 {

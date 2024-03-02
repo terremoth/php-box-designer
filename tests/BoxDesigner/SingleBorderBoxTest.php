@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace BoxDesigner\Tests;
 
+use BoxDesigner\PreBuilt\SingleLineBorder;
+use BoxDesigner\Rectangle;
 use BoxDesigner\SideLessThanOneException;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
-use BoxDesigner\Rectangle;
-use BoxDesigner\SingleLineBorder;
 use PHPUnit\Framework\Attributes\UsesClass;
+use PHPUnit\Framework\TestCase;
 
 #[CoversClass(Rectangle::class)]
 #[UsesClass(SingleLineBorder::class)]
