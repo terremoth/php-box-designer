@@ -41,12 +41,25 @@ class Box
         return $array;
     }
 
+    /**
+     * @param non-empty-array<array-key, array<array-key, mixed|string>> $box
+     * @return string
+     */
     private function convertBoxArrayToString(array $box): string
     {
         $content = '';
+        $size = count($box);
 
-        foreach ($box as $row) {
-            $content .= implode('', $row) . "\n";
+        /**
+         * @var int $counter
+         * @var array<array-key, string> $row
+         */
+        foreach ($box as $counter => $row) {
+            $content .= implode('', $row);
+
+            if ($counter !== $size - 1) {
+                $content .= PHP_EOL;
+            }
         }
 
         return $content;
@@ -65,36 +78,39 @@ class Box
         $box[] = $top;
 
         for ($i = 0; $i < $this->rows; $i++) {
-            array_push($box, $this->split($borderProvider->verticalLine() . str_repeat(' ', $this->columns) .
-                $borderProvider->verticalLine()));
+            $box[] = $this->split($borderProvider->verticalLine() .
+                str_repeat(' ', $this->columns) .
+                $borderProvider->verticalLine());
         }
 
         $lastRow = $borderProvider->bottomLeft() . str_repeat($borderProvider->horizontalLine(), $this->columns) .
             $borderProvider->bottomRight() ;
 
-        array_push($box, $this->split($lastRow));
+        $box[] = $this->split($lastRow);
 
         $contentPlucked = $this->split($this->content);
 
         for ($rowCounter = 1; $rowCounter <= $this->rows; $rowCounter++) {
             for ($columnCounter = 1; $columnCounter <= $this->columns; $columnCounter++) {
-                if (count($contentPlucked) > 0) {
-                    $char = array_shift($contentPlucked);
+                if (count($contentPlucked) <= 0) {
+                    break;
+                }
+
+                $char = (string) array_shift($contentPlucked);
 //                    echo "Col: $columnCounter Row: $rowCounter - Char: $char - Columns: {$this->columns} " . PHP_EOL;
-                    if ($char === "\n") {
-                        if ($columnCounter === 1) {
-                            $columnCounter = 0;
-                            continue;
-                        }
-
+                if ($char === "\n") {
+                    if ($columnCounter === 1) {
                         $columnCounter = 0;
-                        $rowCounter++;
-
                         continue;
                     }
 
-                    $box[$rowCounter][$columnCounter] = $char;
+                    $columnCounter = 0;
+                    $rowCounter++;
+
+                    continue;
                 }
+
+                $box[$rowCounter][$columnCounter] = $char;
             }
         }
 

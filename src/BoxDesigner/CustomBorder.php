@@ -2,14 +2,26 @@
 
 namespace BoxDesigner;
 
-class BoxBuilder implements LineAsciiCharsInterface
+class BoxBuilder implements BorderInterface
 {
-    private string $topLeft;
-    private string $topRight;
-    private string $bottomLeft;
-    private string $bottomRight;
-    private string $horizontalLine;
-    private string $verticalLine;
+    /**
+     * @param string $topLeft
+     * @param string $topRight
+     * @param string $bottomLeft
+     * @param string $bottomRight
+     * @param string $horizontalLine
+     * @param string $verticalLine
+     */
+    public function __construct(
+        private string $topLeft,
+        private string $topRight,
+        private string $bottomLeft,
+        private string $bottomRight,
+        private string $horizontalLine,
+        private string $verticalLine
+    ) {
+    }
+
 
     /**
      * @param string $topLeft
