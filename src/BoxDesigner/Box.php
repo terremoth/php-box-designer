@@ -90,27 +90,24 @@ class Box
 
         $contentPlucked = $this->split($this->content);
 
-        for ($rowCounter = 1; $rowCounter <= $this->rows; $rowCounter++) {
-            for ($columnCounter = 1; $columnCounter <= $this->columns; $columnCounter++) {
+        for ($rowCounter = 0; $rowCounter < $this->rows; $rowCounter++) {
+            for ($columnCounter = 0; $columnCounter < $this->columns; $columnCounter++) {
                 if (count($contentPlucked) <= 0) {
                     break;
                 }
 
                 $char = (string) array_shift($contentPlucked);
-//                    echo "Col: $columnCounter Row: $rowCounter - Char: $char - Columns: {$this->columns} " . PHP_EOL;
+//                echo "Col: $columnCounter Row: $rowCounter - Char: $char - Columns: {$this->columns} " . PHP_EOL;
                 if ($char === "\n") {
-                    if ($columnCounter === 1) {
-                        $columnCounter = 0;
+                    if ($columnCounter === 0) {
+                        $columnCounter--;
                         continue;
                     }
 
-                    $columnCounter = 0;
-                    $rowCounter++;
-
-                    continue;
+                    break;
                 }
 
-                $box[$rowCounter][$columnCounter] = $char;
+                $box[$rowCounter + 1][$columnCounter + 1] = $char;
             }
         }
 
