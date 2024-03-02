@@ -2,8 +2,9 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use BoxDesigner\DoubleLineBorder;
-use BoxDesigner\Rectangle;
+use BoxDesigner\CustomBorder;
+use BoxDesigner\PreBuilt\DoubleLineBorder;
+use BoxDesigner\Box;
 use BoxDesigner\SideLessThanOneException;
 
 $doubleBorder = new DoubleLineBorder();
@@ -11,37 +12,35 @@ $doubleBorder = new DoubleLineBorder();
 $output_filtered = fn(string $input): string => htmlspecialchars($input, ENT_QUOTES, 'UTF-8') . PHP_EOL;
 
 try {
-    $rectangle = new Rectangle(1, 1);
-    echo $output_filtered($rectangle->draw());
+    $box = new Box(1, 1);
+    echo $output_filtered($box->draw());
 
-    $rectangle = new Rectangle(2, 2);
-    echo $output_filtered($rectangle->draw());
+    $box = new Box(3, 3);
+    echo $output_filtered($box->draw());
 
-    $rectangle = new Rectangle(3, 3);
-    echo $output_filtered($rectangle->draw($doubleBorder));
+    $customBorder = new CustomBorder('*', '*', '*', '*', '-', '|');
+    $box = new Box(8, 3);
+    echo $output_filtered($box->draw($customBorder));
 
-    $rectangle = new Rectangle(2, 6);
-    echo $output_filtered($rectangle->draw());
+    $box = new Box(10, 1);
+    echo $output_filtered($box->draw());
 
-    $rectangle = new Rectangle(3, 15);
-    echo $output_filtered($rectangle->draw());
+    $box = new Box(8, 3);
+    $box->setContentInsideBox('John Doe Lorem Ipsum Dolor Sit Amet');
+    echo $output_filtered($box->draw());
 
-    $rectangle = new Rectangle(1, 10);
-    echo $output_filtered($rectangle->draw());
+    $box = new Box(16, 2);
+    $box->setContentInsideBox("by terremoth\nand friends");
+    echo $output_filtered($box->draw());
 
-    $rectangle = new Rectangle(10, 1);
-    echo $output_filtered($rectangle->draw());
+    $box = new Box(2, 2);
+    $draw = $output_filtered($box->draw());
 
-    $rectangle = new Rectangle(4, 3);
-    echo $output_filtered($rectangle->draw());
+    $box = new Box(4, 4);
+    $box->setContentInsideBox($draw);
+    $output_filtered($box->draw($doubleBorder));
 
-    $rectangle = new Rectangle(8, 3);
-    $rectangle->setContentInsideBox('John Doe Lorem Ipsum Dolor Sit Amet');
-    echo $output_filtered($rectangle->draw());
-
-    $rectangle = new Rectangle(2, 16);
-    $rectangle->setContentInsideBox('by terremoth and friends');
-    echo $output_filtered($rectangle->draw($doubleBorder));
+    echo $output_filtered($box->draw($doubleBorder));
 } catch (SideLessThanOneException $e) {
     echo $output_filtered($e->getMessage());
 }//end try
