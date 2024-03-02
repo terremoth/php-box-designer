@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace BoxDesigner\PreBuilt;
 
 use BoxDesigner\Box;
+use BoxDesigner\CustomBorder;
 use BoxDesigner\SideLessThanOneException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -13,6 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 #[CoversClass(Box::class)]
 #[UsesClass(SingleLineBorder::class)]
+#[UsesClass(CustomBorder::class)]
 final class SingleBorderBoxTest extends TestCase
 {
     /**

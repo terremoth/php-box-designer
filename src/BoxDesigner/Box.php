@@ -97,7 +97,7 @@ class Box
                 }
 
                 $char = (string) array_shift($contentPlucked);
-//                echo "Col: $columnCounter Row: $rowCounter - Char: $char - Columns: {$this->columns} " . PHP_EOL;
+                //echo "Col: $columnCounter Row: $rowCounter - Char: $char - Columns: {$this->columns} " . PHP_EOL;
                 if ($char === "\n") {
                     if ($columnCounter === 0) {
                         $columnCounter--;

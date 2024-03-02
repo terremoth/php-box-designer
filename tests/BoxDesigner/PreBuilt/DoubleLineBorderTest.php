@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace BoxDesigner\PreBuilt;
 
+use BoxDesigner\CustomBorder;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(DoubleLineBorder::class)]
+#[UsesClass(CustomBorder::class)]
 final class DoubleLineBorderTest extends TestCase
 {
     public function testLinesOutput(): void
