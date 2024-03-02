@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace BoxDesigner\Tests;
+namespace BoxDesigner\PreBuilt;
 
-use BoxDesigner\PreBuilt\DoubleLineBorder;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 

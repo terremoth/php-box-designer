@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace BoxDesigner\Tests;
+namespace BoxDesigner\PreBuilt;
 
-use BoxDesigner\PreBuilt\SingleLineBorder;
 use BoxDesigner\Box;
 use BoxDesigner\SideLessThanOneException;
 use PHPUnit\Framework\Attributes\CoversClass;

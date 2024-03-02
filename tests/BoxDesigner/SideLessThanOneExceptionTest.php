@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace BoxDesigner\Tests;
 
 use PHPUnit\Framework\TestCase;
-use BoxDesigner\Rectangle;
+use BoxDesigner\Box;
 use BoxDesigner\SideLessThanOneException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\UsesClass;
 
-#[UsesClass(Rectangle::class)]
+#[UsesClass(Box::class)]
 #[CoversClass(SideLessThanOneException::class)]
-#[CoversClass(Rectangle::class)]
+#[CoversClass(Box::class)]
 final class SideLessThanOneExceptionTest extends TestCase
 {
     /**
@@ -37,6 +37,6 @@ final class SideLessThanOneExceptionTest extends TestCase
     public function testSidesLessThanOne(int $row, int $column): void
     {
         $this->expectException(SideLessThanOneException::class);
-        new Rectangle($row, $column);
+        new Box($row, $column);
     }
 }
