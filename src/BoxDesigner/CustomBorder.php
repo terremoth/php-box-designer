@@ -2,7 +2,7 @@
 
 namespace BoxDesigner;
 
-class BoxBuilder implements BorderInterface
+class CustomBorder implements BorderInterface
 {
     /**
      * @param string $topLeft
@@ -25,9 +25,9 @@ class BoxBuilder implements BorderInterface
 
     /**
      * @param string $topLeft
-     * @return BoxBuilder
+     * @return CustomBorder
      */
-    public function setTopLeft(string $topLeft): BoxBuilder
+    public function setTopLeft(string $topLeft): CustomBorder
     {
         $this->topLeft = $topLeft;
         return $this;
@@ -35,9 +35,9 @@ class BoxBuilder implements BorderInterface
 
     /**
      * @param string $topRight
-     * @return BoxBuilder
+     * @return CustomBorder
      */
-    public function setTopRight(string $topRight): BoxBuilder
+    public function setTopRight(string $topRight): CustomBorder
     {
         $this->topRight = $topRight;
         return $this;
@@ -45,9 +45,9 @@ class BoxBuilder implements BorderInterface
 
     /**
      * @param string $bottomLeft
-     * @return BoxBuilder
+     * @return CustomBorder
      */
-    public function setBottomLeft(string $bottomLeft): BoxBuilder
+    public function setBottomLeft(string $bottomLeft): CustomBorder
     {
         $this->bottomLeft = $bottomLeft;
         return $this;
@@ -55,9 +55,9 @@ class BoxBuilder implements BorderInterface
 
     /**
      * @param string $bottomRight
-     * @return BoxBuilder
+     * @return CustomBorder
      */
-    public function setBottomRight(string $bottomRight): BoxBuilder
+    public function setBottomRight(string $bottomRight): CustomBorder
     {
         $this->bottomRight = $bottomRight;
         return $this;
@@ -65,9 +65,9 @@ class BoxBuilder implements BorderInterface
 
     /**
      * @param string $horizontalLine
-     * @return BoxBuilder
+     * @return CustomBorder
      */
-    public function setHorizontalLine(string $horizontalLine): BoxBuilder
+    public function setHorizontalLine(string $horizontalLine): CustomBorder
     {
         $this->horizontalLine = $horizontalLine;
         return $this;
@@ -75,9 +75,9 @@ class BoxBuilder implements BorderInterface
 
     /**
      * @param string $verticalLine
-     * @return BoxBuilder
+     * @return CustomBorder
      */
-    public function setVerticalLine(string $verticalLine): BoxBuilder
+    public function setVerticalLine(string $verticalLine): CustomBorder
     {
         $this->verticalLine = $verticalLine;
         return $this;

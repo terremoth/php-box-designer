@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace BoxDesigner;
 
-interface LineAsciiCharsInterface
+interface BorderInterface
 {
     public function topLeft(): string;
     public function topRight(): string;
