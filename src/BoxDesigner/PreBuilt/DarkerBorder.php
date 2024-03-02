@@ -1,36 +1,13 @@
 <?php
 
-namespace BoxDesigner;
+namespace BoxDesigner\PreBuilt;
 
-class DarkerBorder implements BorderInterface
+use BoxDesigner\CustomBorder;
+
+class DarkerBorder extends CustomBorder
 {
-    public function topLeft(): string
+    public function __construct()
     {
-        return '╔';
-    }
-
-    public function topRight(): string
-    {
-        return '╗';
-    }
-
-    public function bottomLeft(): string
-    {
-        return '╚';
-    }
-
-    public function bottomRight(): string
-    {
-        return '╝';
-    }
-
-    public function horizontalLine(): string
-    {
-        return '═';
-    }
-
-    public function verticalLine(): string
-    {
-        return '║';
+        parent::__construct('┏', '┓', '┗', '┛', '━', '┃');
     }
 }
