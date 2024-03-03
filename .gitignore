@@ -3,3 +3,4 @@ vendor/
 .vscode/
 .phpunit.cache/
 .phpdoc/
+.php-cs-fixer.cache
