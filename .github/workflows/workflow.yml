@@ -48,3 +48,11 @@ jobs:
           verbose: true
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: PHP Mess Detector
+        uses: php-actions/phpmd@v1
+        with:
+          php_version: 8.1
+          path: src/,demos/,tests/
+          output: text
+          ruleset: phpmd.xml

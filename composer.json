@@ -21,7 +21,8 @@
         "vimeo/psalm": "^5.0",
         "nikic/php-parser": "^4.10",
         "squizlabs/php_codesniffer": "*",
-        "phpmd/phpmd": "@stable"
+        "phpmd/phpmd": "@stable",
+        "friendsofphp/php-cs-fixer": "^3.51"
     },
     "license": "GPL-3.0-or-later",
     "autoload": {
