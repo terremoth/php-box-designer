@@ -39,7 +39,7 @@ jobs:
           bootstrap: vendor/autoload.php
           configuration: phpunit.xml
           php_extensions: xdebug
-          args: tests --coverage-clover ./coverage.xml
+          args: tests --migrate-configuration --coverage-clover ./coverage.xml
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4.0.1
