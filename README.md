@@ -2,6 +2,7 @@
 Boxes. There are Boxes. Everywhere.  
 
 Simple app that draws boxes using chars with or without text content inside.  
+This repo main idea is to demonstrate the high state of the art a PHP repo can be.  
 
 [![CodeCov](https://codecov.io/gh/terremoth/php-ascii-box-designer/graph/badge.svg?token=V73U67XRB3)](https://app.codecov.io/gh/terremoth/php-ascii-box-designer)
 [![Psalm type coverage](https://shepherd.dev/github/terremoth/php-box-designer/coverage.svg)](https://shepherd.dev/github/terremoth/php-box-designer)
