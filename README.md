@@ -2,7 +2,7 @@
 Boxes. There are Boxes. Everywhere.  
 
 Simple app that draws boxes using chars with or without text content inside.  
-This repo main idea is to demonstrate the high state of the art a PHP repo can be.  
+This repo main idea is to demonstrate the highest state of the art a PHP repo can be.  
 
 [![codecov](https://codecov.io/gh/terremoth/php-box-designer/graph/badge.svg?token=V73U67XRB3)](https://codecov.io/gh/terremoth/php-box-designer)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0b0046e370496f58fa6e/test_coverage)](https://codeclimate.com/github/terremoth/php-box-designer/test_coverage)
