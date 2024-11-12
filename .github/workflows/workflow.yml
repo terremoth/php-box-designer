@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
       - name: Checkout Actions
         uses: actions/checkout@v4
 
@@ -25,8 +26,8 @@ jobs:
           path: vendor
           key: composer-${{ hashFiles('composer.lock') }}
 
-#      - name: Run composer install
-#        run: composer install -n --prefer-dist
+      - name: Code Climate Coverage Action
+        uses: paambaati/codeclimate-action@v9.0.0
 
       - name: Run psalm
         run: ./vendor/bin/psalm --shepherd --threads=2 --no-cache --output-format=github
