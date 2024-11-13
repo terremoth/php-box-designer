@@ -26,43 +26,4 @@ See [demos/drawing.php](demos/drawing.php) for examples.
 
 ### What it looks like?
 
-<font face="comic sans ms">
-    
-```sh
-$ php demos/drawing.php
-┌─┐
-│ │
-└─┘
-┏━━━━━┓
-┃╔═══╗┃
-┃║┌─┐║┃
-┃║│ │║┃
-┃║└─┘║┃
-┃╚═══╝┃
-┗━━━━━┛
-*--------*
-|        |
-|        |
-|        |
-*--------*
-┌──────────┐
-│          │
-└──────────┘
-┌────────┐
-│John Doe│
-│ Lorem I│
-│psum Dol│
-└────────┘
-┌────────────────┐
-│by terremoth    │
-│and friends     │
-└────────────────┘
-╔════╗
-║┌──┐║
-║│  │║
-║│  │║
-║└──┘║
-╚════╝
-```
-
-</font>
+![image](https://github.com/user-attachments/assets/30b5e651-19bc-46d9-ae2f-422d61470ca1)
