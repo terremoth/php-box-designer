@@ -17,10 +17,9 @@ See [demos/drawing.php](demos/drawing.php) for examples.
 
 ## Installation
 
-- Clone this repo:
-- `$ git clone https://github.com/terremoth/php-box-designer.git`
-- `$ cd php-box-designer`
-- `$ composer install`
+```sh
+composer require terremoth/php-box-designer
+```
 
 ---
 
