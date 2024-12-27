@@ -11,6 +11,7 @@ This repo main idea is to demonstrate the highest state of the art a PHP repo ca
 [![Test Run Status](https://github.com/terremoth/php-box-designer/actions/workflows/workflow.yml/badge.svg?branch=main)](https://github.com/terremoth/php-box-designer/actions/workflows/workflow.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f77e487ba22943b5b199a2567f44d6af)](https://app.codacy.com/gh/terremoth/php-box-designer/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0b0046e370496f58fa6e/maintainability)](https://codeclimate.com/github/terremoth/php-box-designer/maintainability)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/terremoth/php-box-designer/badge)](https://scorecard.dev/viewer/?uri=github.com/terremoth/php-box-designer)
 [![License](https://img.shields.io/github/license/terremoth/php-box-designer.svg?logo=gnu&color=41bb13)](https://github.com/terremoth/php-box-designer/blob/main/LICENSE)
 
 See [demos/drawing.php](demos/drawing.php) for examples.
